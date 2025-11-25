@@ -28,6 +28,12 @@
 
     netsh int ipv4 set dynamic tcp start=51000 num=14536
 
+### Contenedores
+
+#### Web para pruebas
+
+    docker run -d --name web-for-testing -p 8181:8181 jamarton/web-for-testing
+
 ## Documentación
 
 - [Playwright](https://playwright.dev/)
