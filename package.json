@@ -1,0 +1,28 @@
+{
+  "name": "rem20251125",
+  "version": "1.0.0",
+  "description": "- Node.js LTS (Alternativas)\r   - [Node.js](https://nodejs.org/es)\r   - [NVM for Windows](https://github.com/coreybutler/nvm-windows/releases)\r - [Visual Studio Code](https://code.visualstudio.com/download)\r - [Git](https://git-scm.com/)",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmagit/REM20251125.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jmagit/REM20251125/issues"
+  },
+  "homepage": "https://github.com/jmagit/REM20251125#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-playwright": "^2.3.0",
+    "globals": "^16.5.0",
+    "typescript-eslint": "^8.48.0"
+  }
+}
