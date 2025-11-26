@@ -1,9 +1,18 @@
 {
-  "name": "rem20251125",
+  "name": "web-4-testing",
   "version": "1.0.0",
   "description": "- Node.js LTS (Alternativas)\r   - [Node.js](https://nodejs.org/es)\r   - [NVM for Windows](https://github.com/coreybutler/nvm-windows/releases)\r - [Visual Studio Code](https://code.visualstudio.com/download)\r - [Git](https://git-scm.com/)",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "e2e": "playwright test",
+    "e2e:report": "playwright show-report",
+    "e2e:dev": "playwright test --project=chromium --ui",
+    "e2e:chrome": "playwright test --project=chromium",
+    "e2e:headed": "playwright test --headed",
+    "lint": "eslint e2e",
+    "lint:fix": "eslint e2e --fix"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jmagit/REM20251125.git"
