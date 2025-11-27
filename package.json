@@ -10,6 +10,7 @@
     "e2e:dev": "playwright test --project=chromium --ui",
     "e2e:chrome": "playwright test --project=chromium",
     "e2e:headed": "playwright test --headed",
+    "debug": "playwright test --debug",
     "lint": "eslint tests",
     "lint:fix": "eslint tests --fix"
   },
