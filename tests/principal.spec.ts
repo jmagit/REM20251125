@@ -64,8 +64,8 @@ test.describe('Navegación', () => {
     opciones.forEach(async ({ name, title }) => {
       test(`Navega a la opción: ${name}`, async ({ page, isMobile }) => {
         // eslint-disable-next-line playwright/no-conditional-in-test
-        // if (isMobile)
-        //   await page.getByRole('button', { name: 'Toggle navigation' }).click();
+        if (isMobile)
+          await page.getByRole('button', { name: 'Toggle navigation' }).click();
         await page.getByRole('link', { name }).click();
         await expect(page).toHaveTitle(title);
       });
