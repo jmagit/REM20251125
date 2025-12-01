@@ -55,9 +55,6 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
-.vscode/
-
 # SonarQube
 .sonar/
 .sonarqube/
@@ -65,6 +62,9 @@ build/
 sonar-scan.cmd
 
 ### VS Code ###
+.vscode/
+
+### Auxiliares ###
 kk/**
 libraries/**
 *.pptx

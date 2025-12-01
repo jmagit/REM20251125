@@ -35,6 +35,12 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'ci',
+      use: { ...devices['Desktop Chrome'], },
+      testMatch: '**/{example,demo-todo-app}.spec.ts',
+    },
+
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
