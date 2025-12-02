@@ -91,3 +91,14 @@ test.describe('Pie de página', () => {
     // await expect(page.getByRole('contentinfo')).toContainText(`© 2017-${año} Company, Inc.`);
   });
 });
+
+test('Pagina de inicio', async ({page}) => {
+await page.getByRole('img', { name: 'Calculadora' }).click();
+await expect(page.getByRole('button', { name: 'Ver mas »' }).first()).toBeVisible();
+await page.getByText('Carrito de la compraEl').nth(1).click();
+await page.locator('#myCarousel').getByRole('heading', { name: 'Calculadora' }).click();
+await page.getByRole('button', { name: 'Next' }).click();
+await page.locator('#myCarousel').getByRole('heading', { name: 'Carrito de la compra' }).click();
+await page.getByRole('heading', { name: 'Entorno de pruebas Web4Testing' }).click();
+
+})

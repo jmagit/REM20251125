@@ -1,5 +1,8 @@
 [
     { "name": "Calculadora", "title": "Calculadora" },
     { "name": "Compras", "title": "Carrito de la compra" },
-    { "name": "Contactos", "title": "Contactos" }
+    { "name": "Contactos", "title": "Contactos" },
+    { "name": "Alertas", "title": "Alertas" },
+    { "name": "Ficheros", "title": "Ficheros" },
+    { "name": "APIs", "title": "API REST" }
 ]
