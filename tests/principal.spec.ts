@@ -62,9 +62,9 @@ test.describe('Navegación', () => {
 
   test.describe('Recorrer todas las opciones', () => {
     opciones.forEach(async ({ name, title }) => {
-      test(`Navega a la opción: ${name}`, async ({ page, isMobile }) => {
+      test(`Navega a la opción: ${name}`, async ({ page, /*isMobile,*/ viewport }) => {
         // eslint-disable-next-line playwright/no-conditional-in-test
-        if (isMobile)
+        if ((viewport?.width ?? 720) < 720 /* isMobile*/)
           await page.getByRole('button', { name: 'Toggle navigation' }).click();
         await page.getByRole('link', { name }).click();
         await expect(page).toHaveTitle(title);
@@ -84,21 +84,21 @@ test.describe('Pie de página', () => {
     await expect(page.getByRole('contentinfo')).toContainText(`© 2017-${año} Company, Inc.`);
   });
 
-  test.fixme('Enlaces de privacidad y terminos', async ({ page }) => {
+  test('Enlaces de privacidad y terminos', async ({ page }) => {
     // await page.goto('http://localhost:8181/')
-    expect(true).toBe(false)
-    // test.fixme(test.info().status === 'passed', 'esta a medias')
-    // await expect(page.getByRole('contentinfo')).toContainText(`© 2017-${año} Company, Inc.`);
+    expect(true).toBeTruthy()
+    // expect(true).toBeFalsy()
+    test.fixme(test.info().status === 'passed', 'esta a medias')
+    await expect(page.getByRole('contentinfo')).toContainText(`© 2017-${(new Date()).getFullYear()} Company, Inc.`);
   });
 });
 
 test('Pagina de inicio', async ({page}) => {
-await page.getByRole('img', { name: 'Calculadora' }).click();
-await expect(page.getByRole('button', { name: 'Ver mas »' }).first()).toBeVisible();
-await page.getByText('Carrito de la compraEl').nth(1).click();
-await page.locator('#myCarousel').getByRole('heading', { name: 'Calculadora' }).click();
-await page.getByRole('button', { name: 'Next' }).click();
-await page.locator('#myCarousel').getByRole('heading', { name: 'Carrito de la compra' }).click();
-await page.getByRole('heading', { name: 'Entorno de pruebas Web4Testing' }).click();
-
+  await page.getByRole('img', { name: 'Calculadora' }).click();
+  await expect(page.getByRole('button', { name: 'Ver mas »' }).first()).toBeVisible();
+  await page.getByText('Carrito de la compraEl').nth(1).click();
+  await page.locator('#myCarousel').getByRole('heading', { name: 'Calculadora' }).click();
+  await page.getByRole('button', { name: 'Next' }).click();
+  await page.locator('#myCarousel').getByRole('heading', { name: 'Carrito de la compra' }).click();
+  await page.getByRole('heading', { name: 'Entorno de pruebas Web4Testing' }).click();
 })
