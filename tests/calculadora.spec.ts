@@ -121,9 +121,10 @@ test.describe('Operaciones de la calculadora', () => {
   test('Error IEE-754', () => {
     expect.soft(0.1 + 0.2).toBe(0.3)
     expect.soft(1 - 0.9).toBe(0.1)
-    expect.soft(1/0).toBe(0)
-    expect.soft(1/0*0).toBe(0)
-    // test.info().expectedStatus = 'failed'
+    expect.soft(1/0).toBe(Infinity)
+    expect.soft(-1/0).toBe(-Infinity)
+    expect.soft(1/0*0).toBe(NaN)
+    test.info().expectedStatus = 'failed'
   })
 
   test.describe('Cálculos', () => {
@@ -158,7 +159,7 @@ test.describe('Instantáneas de la calculadora', () => {
   test.describe('Con visual snapshot', () => {
     operaciones.forEach(async ({ operacion, nombre }) => {
       test(`visual snapshot ${nombre}`, async ({ page }) => {
-        await page.getByRole('button', { name: '5' }).click();
+        await page.getByRole('button', { name: '1' }).click();
         await page.getByRole('button', { name: operacion }).click();
         await expect(page).toHaveScreenshot();
       })
