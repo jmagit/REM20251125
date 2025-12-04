@@ -40,9 +40,22 @@ export default defineConfig({
       testMatch: '**/{example,demo-todo-app}.spec.ts',
     },
 
+    { name: 'setup', testMatch: /.*\.setup\.ts/ },
+
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      // dependencies: ['setup'],
+      use: { 
+        ...devices['Desktop Chrome'],
+        // storageState: 'playwright/.auth/adm-storage-state.json', 
+        trace: 'on-first-retry',
+        video: {
+          mode: 'on-first-retry',
+          size: { width: 640, height: 480 },
+        }
+      },
+      dependencies: ['setup'],
+      retries: 2,
     },
 
     {
