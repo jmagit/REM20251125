@@ -1,0 +1,7 @@
+[
+    { "idUsuario": "admin", "password": "P@$$w0rd", "nombre": "Administrador", "filesufix": "" },
+    { "idUsuario": "adm@example.com", "password": "P@$$w0rd", "nombre": "Administrador", "filesufix": "adm" },
+    { "idUsuario": "usr@example.com", "password": "P@$$w0rd", "nombre": "Usuario registrado", "filesufix": "user" },
+    { "idUsuario": "emp@example.com", "password": "P@$$w0rd", "nombre": "Empleado", "filesufix": "emp" },
+    { "idUsuario": "test@example.com", "password": "P@$$w0rd", "nombre": "Tester", "filesufix": "test" }
+]

@@ -44,17 +44,16 @@ export default defineConfig({
 
     {
       name: 'chromium',
-      // dependencies: ['setup'],
+      dependencies: ['setup'],
       use: { 
         ...devices['Desktop Chrome'],
-        // storageState: 'playwright/.auth/adm-storage-state.json', 
+        storageState: 'playwright/.auth/emp-storage-state.json', 
         trace: 'on-first-retry',
         video: {
           mode: 'on-first-retry',
           size: { width: 640, height: 480 },
         }
       },
-      dependencies: ['setup'],
       retries: 2,
     },
 

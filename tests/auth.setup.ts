@@ -23,8 +23,11 @@ const authApi = (index: number) => async ({ request }: PlaywrightTestArgs) => {
         data: { username: usuarios[index].idUsuario, password: usuarios[index].password }
     })
     expect(response.ok()).toBeTruthy()
-    await request.storageState({ path: path.join(__dirname, `../playwright/.auth/${usuarios[index].filesufix}-storage-state.json`) });
+    await request.storageState({ path: path.join(__dirname, `../playwright/.auth/${usuarios[index].filesufix}-api-storage-state.json`) });
 };
 
 setup('admin storage authenticate state', auth(1));
+setup('usr storage authenticate state', auth(1));
+setup('emp storage authenticate state', auth(3));
+setup('test storage authenticate state', auth(4));
 setup('user storage authenticate state', authApi(2));

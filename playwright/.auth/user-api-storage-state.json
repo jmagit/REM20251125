@@ -1,0 +1,15 @@
+{
+  "cookies": [
+    {
+      "name": "Authorization",
+      "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JAZXhhbXBsZS5jb20iLCJyb2xlcyI6WyJVc3VhcmlvcyJdLCJpYXQiOjE3NjQ4NjQzNjQsImV4cCI6MTc2NDg2NDY2NCwiYXVkIjoiYXV0aG9yaXphdGlvbiIsImlzcyI6Ik1pY3Jvc2VydmljaW9zSldUIn0.pT6IOxdoyZYN_KhQSsAtQEK3RX41G4FOszuYH0TMlHMiTO1ejvVZC4C7XcOmcnTDOCDRqDDiZB7lblOszvWOLYUXs5jP8M7hjKMHeRKgPE8oF69mFMkHqZv18At4QrkHz_9VteHL-2V6TuA6lYq3aKewetOb3y15-RiDETRmXYCjeSkBlJVhzg-HY6UJCvC87HNBPT4YztEJtcoRxQhRij_7QOTx_E_ardxJ_-VkeBkxndIhBIVuNSDLE9TfmsIT8AG00sHq-_JIbNEC25uYW-GHv4ymNzL_RkxDP4P_3swMhEGsRCWQc5Q-gVT7l6tbmMlRRQrnHcolOPYfn5VxOQ",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1764867964,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}
