@@ -17,6 +17,7 @@ test.beforeEach('Prepara la prueba navegando a la página inicial', async ({ pag
 });
 
 test.describe('Navegación', () => {
+  // test.use({ storageState: 'playwright/.auth/test-storage-state.json' });
 
   test('prueba las opciones de navegación por el menu de la página principal', {
     tag: '@smoke',
@@ -26,6 +27,7 @@ test.describe('Navegación', () => {
     ],
   }, async ({ page }) => {
     // await page.goto('http://localhost:8181/');
+
     await test.step('navega a la opción: Calculadora', async () => {
       await page.getByRole('link', { name: 'Calculadora' }).click();
       await expect(page.getByRole('heading', { name: 'Calculadora' })).toBeVisible();
@@ -93,7 +95,7 @@ test.describe('Pie de página', () => {
   });
 });
 
-test('Pagina de inicio', async ({page}) => {
+test('Pagina de inicio', async ({ page }) => {
   await page.getByRole('img', { name: 'Calculadora' }).click();
   await expect(page.getByRole('button', { name: 'Ver mas »' }).first()).toBeVisible();
   await page.getByText('Carrito de la compraEl').nth(1).click();

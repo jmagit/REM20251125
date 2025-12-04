@@ -1,0 +1,12 @@
+{
+    "id": 101,
+    "tratamiento": "Sr.",
+    "nombre": "Pepito",
+    "apellidos": "Grillo",
+    "telefono": "555 123 456",
+    "email": "pepito@grillo",
+    "nacimiento": "2000-12-25",
+    "sexo": "H",
+    "avatar": "https://randomuser.me/api/portraits/men/50.jpg",
+    "conflictivo": false
+}

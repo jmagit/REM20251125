@@ -47,7 +47,7 @@ export default defineConfig({
       dependencies: ['setup'],
       use: { 
         ...devices['Desktop Chrome'],
-        storageState: 'playwright/.auth/emp-storage-state.json', 
+        // storageState: 'playwright/.auth/emp-storage-state.json', 
         trace: 'on-first-retry',
         video: {
           mode: 'on-first-retry',
