@@ -1,4 +1,5 @@
-import { test, expect, Locator } from '@playwright/test';
+import { Locator } from '@playwright/test';
+import { test, expect } from '../utils/auth.fixture';
 
 let btnEnviar: Locator
 
@@ -152,8 +153,8 @@ test('añadir un mal contacto - con instantáneas', async ({ page }) => {
 
 test.describe('modifica o borra datos existentes', () => {
 
-  test.beforeEach('prepara datos', async ({ request }) => {
-    await request.delete('/api/contactos/101', { ignoreHTTPSErrors: true })
+  test.beforeEach('prepara datos', async ({ request, authHeader }) => {
+    await request.delete('/api/contactos/101', { ignoreHTTPSErrors: true, headers: authHeader })
     const response = await request.post('/api/contactos', {
       headers: { "content-type": "application/json" },
       data: {
