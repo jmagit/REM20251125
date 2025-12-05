@@ -82,4 +82,5 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-/playwright/.auth/
+# Solo a efectos pedagógicos esta comentado, debería estar sin comentar
+# /playwright/.auth/

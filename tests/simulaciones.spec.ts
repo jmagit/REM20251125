@@ -180,35 +180,30 @@ test.describe('Suplantación de un API REST', () => {
     await page.context().route(/\/api\/contactos\/\d+/, async (route) => {
       switch (route.request().method()) {
         case "GET": {
-          await route.fulfill({ status: 404,  });
-          // await route.abort('aborted');
+          await route.fulfill({ status: 409, headers: {"content-type" : "text/html; charset=utf-8"},  });
           break;
         }
         default: 
-          // await route.fulfill({ status: 400,  });
-          await route.abort('aborted');
+          await route.fulfill({ status: 409, headers: {"content-type" : "text/html; charset=utf-8"},  });
       }
     });
     await page.context().route(/\/api\/contactos$/, async (route) => {
-      switch (route.request().method()) {
-        case "PUT": {
-          await route.fulfill({ status: 404,  });
-          break;
-        }
+      if(route.request().method() === "POST") {
+          await route.fulfill({ status: 409, headers: {"content-type" : "text/html; charset=utf-8"} });
       }
     });
     await pom.goto();
     await pom.editar('Jill Goodbar')
-    // await expect(page.locator('#alertError')).toMatchAriaSnapshot(`
-    //   - text: "/ERROR: 404: Not Found/"
-    //   `);
-    // await pom.nuevo()
-    // await pom.ponId('101')
-    // await pom.ponNombre('1234 56789')
-    // await pom.enviar()
-    // await expect(page.locator('#alertError')).toMatchAriaSnapshot(`
-    //   - text: "/ERROR: 400: Bad Request/"
-    //   `);
+    await expect(page.locator('#alertError')).toMatchAriaSnapshot(`
+      - text: "ERROR: 409: Conflict"
+      `);
+    await pom.nuevo()
+    await pom.ponId('101')
+    await pom.ponNombre('1234 56789')
+    await pom.enviar()
+    await expect(page.locator('#alertError')).toMatchAriaSnapshot(`
+      - text: "/ERROR: 409: Conflict/"
+      `);
   });
 });
 
